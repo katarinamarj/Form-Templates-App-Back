@@ -10,10 +10,24 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 class ApiController extends AbstractController
 {
+    /*
     #[Route('/api/hello', name: 'api_hello', methods: ['GET'])]
     public function hello(): JsonResponse
     {
         return new JsonResponse(['message' => 'Hello World']);
+    }
+    */
+    
+    #[Route('/api/login', name: 'api_login', methods: ['POST'])]
+    public function login(AuthenticationUtils $authenticationUtils): JsonResponse
+    {
+        $error = $authenticationUtils->getLastAuthenticationError();
+
+        if ($error) {
+            return new JsonResponse(['error' => $error->getMessageKey()], 401);
+        }
+
+        return new JsonResponse(['message' => 'Successfully logged in'], 200);
     }
 }
 
