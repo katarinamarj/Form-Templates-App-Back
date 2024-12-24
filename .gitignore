@@ -1,4 +1,3 @@
-
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
@@ -23,11 +22,9 @@
 /public/assets/
 /assets/vendor/
 ###< symfony/asset-mapper ###
+config/jwt/private.pem
+config/jwt/public.pem
 
 ###> lexik/jwt-authentication-bundle ###
 /config/jwt/*.pem
 ###< lexik/jwt-authentication-bundle ###
-
-config/jwt/private.pem
-config/jwt/public.pem
-
