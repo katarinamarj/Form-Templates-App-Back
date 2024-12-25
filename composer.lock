@@ -4,20 +4,221 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "67bb64ec75c0bcbc01ba6574fa8e234b",
+    "content-hash": "6a4b3681619dee2fd69ead27beea38d7",
     "packages": [
         {
-            "name": "api-platform/doctrine-common",
-            "version": "v3.4.10",
+            "name": "api-platform/core",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/api-platform/doctrine-common.git",
-                "reference": "07c8dbca43861691d86c84b627870acf61976a74"
+                "url": "https://github.com/api-platform/core.git",
+                "reference": "825833cfee432e6b0988882d019b4fe4a03f63d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/api-platform/doctrine-common/zipball/07c8dbca43861691d86c84b627870acf61976a74",
-                "reference": "07c8dbca43861691d86c84b627870acf61976a74",
+                "url": "https://api.github.com/repos/api-platform/core/zipball/825833cfee432e6b0988882d019b4fe4a03f63d5",
+                "reference": "825833cfee432e6b0988882d019b4fe4a03f63d5",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/inflector": "^1.0 || ^2.0",
+                "php": ">=8.2",
+                "psr/cache": "^1.0 || ^2.0 || ^3.0",
+                "psr/container": "^1.0 || ^2.0",
+                "symfony/deprecation-contracts": "^3.1",
+                "symfony/http-foundation": "^6.4 || ^7.1",
+                "symfony/http-kernel": "^6.4 || ^7.1",
+                "symfony/property-access": "^6.4 || ^7.1",
+                "symfony/property-info": "^6.4 || ^7.1",
+                "symfony/serializer": "^6.4 || ^7.1",
+                "symfony/translation-contracts": "^3.3",
+                "symfony/web-link": "^6.4 || ^7.1",
+                "willdurand/negotiation": "^3.1"
+            },
+            "conflict": {
+                "doctrine/common": "<3.2.2",
+                "doctrine/dbal": "<2.10",
+                "doctrine/mongodb-odm": "<2.4",
+                "doctrine/orm": "<2.14.0",
+                "doctrine/persistence": "<1.3",
+                "phpspec/prophecy": "<1.15",
+                "phpunit/phpunit": "<9.5",
+                "symfony/framework-bundle": "6.4.6 || 7.1.6",
+                "symfony/var-exporter": "<6.1.1"
+            },
+            "require-dev": {
+                "api-platform/doctrine-common": "^3.4 || ^4.0",
+                "api-platform/doctrine-odm": "^3.4 || ^4.0",
+                "api-platform/doctrine-orm": "^3.4 || ^4.0",
+                "api-platform/documentation": "^3.4 || ^4.0",
+                "api-platform/elasticsearch": "^3.4 || ^4.0",
+                "api-platform/graphql": "^3.4 || ^4.0",
+                "api-platform/http-cache": "^3.4 || ^4.0",
+                "api-platform/hydra": "^3.4 || ^4.0",
+                "api-platform/json-api": "^3.3 || ^4.0",
+                "api-platform/json-schema": "^3.4 || ^4.0",
+                "api-platform/jsonld": "^3.4 || ^4.0",
+                "api-platform/metadata": "^3.4 || ^4.0",
+                "api-platform/openapi": "^3.4 || ^4.0",
+                "api-platform/ramsey-uuid": "^3.4 || ^4.0",
+                "api-platform/serializer": "^3.4 || ^4.0",
+                "api-platform/state": "^3.4 || ^4.0",
+                "api-platform/validator": "^3.4 || ^4.0",
+                "behat/behat": "^3.11",
+                "behat/mink": "^1.9",
+                "doctrine/cache": "^1.11 || ^2.1",
+                "doctrine/common": "^3.2.2",
+                "doctrine/dbal": "^4.0",
+                "doctrine/doctrine-bundle": "^2.11",
+                "doctrine/mongodb-odm": "^2.6",
+                "doctrine/mongodb-odm-bundle": "^4.0 || ^5.0",
+                "doctrine/orm": "^2.17 || ^3.0",
+                "elasticsearch/elasticsearch": "^8.4",
+                "friends-of-behat/mink-browserkit-driver": "^1.3.1",
+                "friends-of-behat/mink-extension": "^2.2",
+                "friends-of-behat/symfony-extension": "^2.1",
+                "guzzlehttp/guzzle": "^6.0 || ^7.0",
+                "illuminate/config": "^11.0",
+                "illuminate/contracts": "^11.0",
+                "illuminate/database": "^11.0",
+                "illuminate/http": "^11.0",
+                "illuminate/pagination": "^11.0",
+                "illuminate/routing": "^11.0",
+                "illuminate/support": "^11.0",
+                "jangregor/phpstan-prophecy": "^1.0",
+                "justinrainbow/json-schema": "^5.2.11",
+                "laravel/framework": "^11.0",
+                "orchestra/testbench": "^9.1",
+                "phpspec/prophecy-phpunit": "^2.2",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpdoc-parser": "^1.13",
+                "phpstan/phpstan": "^1.10",
+                "phpstan/phpstan-doctrine": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpstan/phpstan-symfony": "^1.0",
+                "phpunit/phpunit": "^11.2",
+                "psr/log": "^1.0 || ^2.0 || ^3.0",
+                "ramsey/uuid": "^4.0",
+                "ramsey/uuid-doctrine": "^2.0",
+                "soyuka/contexts": "^3.3.10",
+                "soyuka/pmu": "^0.0.12",
+                "soyuka/stubs-mongodb": "^1.0",
+                "symfony/asset": "^6.4 || ^7.1",
+                "symfony/browser-kit": "^6.4 || ^7.1",
+                "symfony/cache": "^6.4 || ^7.1",
+                "symfony/config": "^6.4 || ^7.1",
+                "symfony/console": "^6.4 || ^7.1",
+                "symfony/css-selector": "^6.4 || ^7.1",
+                "symfony/dependency-injection": "^6.4 || ^7.1",
+                "symfony/doctrine-bridge": "^6.4.2 || ^7.1.2",
+                "symfony/dom-crawler": "^6.4 || ^7.1",
+                "symfony/error-handler": "^6.4 || ^7.1",
+                "symfony/event-dispatcher": "^6.4 || ^7.1",
+                "symfony/expression-language": "^6.4 || ^7.1",
+                "symfony/finder": "^6.4 || ^7.1",
+                "symfony/form": "^6.4 || ^7.1",
+                "symfony/framework-bundle": "^6.4 || ^7.1",
+                "symfony/http-client": "^6.4 || ^7.1",
+                "symfony/intl": "^6.4 || ^7.1",
+                "symfony/maker-bundle": "^1.24",
+                "symfony/mercure-bundle": "*",
+                "symfony/messenger": "^6.4 || ^7.1",
+                "symfony/routing": "^6.4 || ^7.1",
+                "symfony/security-bundle": "^6.4 || ^7.1",
+                "symfony/security-core": "^6.4 || ^7.1",
+                "symfony/stopwatch": "^6.4 || ^7.1",
+                "symfony/string": "^6.4 || ^7.1",
+                "symfony/twig-bundle": "^6.4 || ^7.1",
+                "symfony/uid": "^6.4 || ^7.1",
+                "symfony/validator": "^6.4 || ^7.1",
+                "symfony/web-profiler-bundle": "^6.4 || ^7.1",
+                "symfony/yaml": "^6.4 || ^7.1",
+                "twig/twig": "^1.42.3 || ^2.12 || ^3.0",
+                "webonyx/graphql-php": "^15.0"
+            },
+            "suggest": {
+                "doctrine/mongodb-odm-bundle": "To support MongoDB. Only versions 4.0 and later are supported.",
+                "elasticsearch/elasticsearch": "To support Elasticsearch.",
+                "ocramius/package-versions": "To display the API Platform's version in the debug bar.",
+                "phpstan/phpdoc-parser": "To support extracting metadata from PHPDoc.",
+                "psr/cache-implementation": "To use metadata caching.",
+                "ramsey/uuid": "To support Ramsey's UUID identifiers.",
+                "symfony/cache": "To have metadata caching when using Symfony integration.",
+                "symfony/config": "To load XML configuration files.",
+                "symfony/expression-language": "To use authorization features.",
+                "symfony/http-client": "To use the HTTP cache invalidation system.",
+                "symfony/messenger": "To support messenger integration.",
+                "symfony/security": "To use authorization features.",
+                "symfony/twig-bundle": "To use the Swagger UI integration.",
+                "symfony/uid": "To support Symfony UUID/ULID identifiers.",
+                "symfony/web-profiler-bundle": "To use the data collector.",
+                "webonyx/graphql-php": "To support GraphQL."
+            },
+            "type": "library",
+            "extra": {
+                "pmu": {
+                    "projects": [
+                        "./src/*/composer.json",
+                        "src/Doctrine/*/composer.json"
+                    ]
+                },
+                "symfony": {
+                    "require": "^6.4 || ^7.1"
+                },
+                "branch-alias": {
+                    "dev-3.4": "3.4.x-dev",
+                    "dev-main": "4.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ApiPlatform\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kévin Dunglas",
+                    "email": "kevin@dunglas.fr",
+                    "homepage": "https://dunglas.fr"
+                }
+            ],
+            "description": "Build a fully-featured hypermedia or GraphQL API in minutes!",
+            "homepage": "https://api-platform.com",
+            "keywords": [
+                "Hydra",
+                "JSON-LD",
+                "api",
+                "graphql",
+                "hal",
+                "jsonapi",
+                "laravel",
+                "openapi",
+                "rest",
+                "swagger",
+                "symfony"
+            ],
+            "support": {
+                "issues": "https://github.com/api-platform/core/issues",
+                "source": "https://github.com/api-platform/core/tree/v4.0.0"
+            },
+            "time": "2024-09-27T12:40:48+00:00"
+        },
+        {
+            "name": "api-platform/doctrine-common",
+            "version": "v4.0.13",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/api-platform/doctrine-common.git",
+                "reference": "eb82d8531ed9a4b59ea0028f3429c464d0530bc4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/api-platform/doctrine-common/zipball/eb82d8531ed9a4b59ea0028f3429c464d0530bc4",
+                "reference": "eb82d8531ed9a4b59ea0028f3429c464d0530bc4",
                 "shasum": ""
             },
             "require": {
@@ -26,7 +227,7 @@
                 "doctrine/collections": "^2.1",
                 "doctrine/common": "^3.2.2",
                 "doctrine/persistence": "^3.2",
-                "php": ">=8.1"
+                "php": ">=8.2"
             },
             "conflict": {
                 "doctrine/persistence": "<1.3"
@@ -34,9 +235,8 @@
             "require-dev": {
                 "doctrine/mongodb-odm": "^2.6",
                 "doctrine/orm": "^2.17 || ^3.0",
-                "phpspec/prophecy-phpunit": "^2.0",
-                "phpunit/phpunit": "^10.0",
-                "symfony/phpunit-bridge": "^6.4 || ^7.0"
+                "phpspec/prophecy-phpunit": "^2.2",
+                "phpunit/phpunit": "^11.2"
             },
             "suggest": {
                 "api-platform/graphql": "For GraphQl mercure subscriptions.",
@@ -44,7 +244,6 @@
                 "phpstan/phpdoc-parser": "For PHP documentation support.",
                 "symfony/config": "For XML resource configuration.",
                 "symfony/mercure-bundle": "For mercure updates publisher.",
-                "symfony/messenger": "For async mercure updates.",
                 "symfony/yaml": "For YAML resource configuration."
             },
             "type": "library",
@@ -54,7 +253,7 @@
                     "name": "api-platform/api-platform"
                 },
                 "symfony": {
-                    "require": "^6.4 || ^7.1"
+                    "require": "^6.4 || ^7.0"
                 },
                 "branch-alias": {
                     "dev-3.4": "3.4.x-dev",
@@ -91,54 +290,48 @@
                 "rest"
             ],
             "support": {
-                "source": "https://github.com/api-platform/doctrine-common/tree/v3.4.10"
+                "source": "https://github.com/api-platform/doctrine-common/tree/v4.0.13"
             },
-            "time": "2024-09-21T10:54:56+00:00"
+            "time": "2024-09-21T11:01:16+00:00"
         },
         {
             "name": "api-platform/doctrine-orm",
-            "version": "v3.4.10",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/api-platform/doctrine-orm.git",
-                "reference": "01d49d6f89060eaf4804b02bc0f8d04f59107999"
+                "reference": "6a7e26b56d31a3bf755f5015c007dca2607694eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/api-platform/doctrine-orm/zipball/01d49d6f89060eaf4804b02bc0f8d04f59107999",
-                "reference": "01d49d6f89060eaf4804b02bc0f8d04f59107999",
+                "url": "https://api.github.com/repos/api-platform/doctrine-orm/zipball/6a7e26b56d31a3bf755f5015c007dca2607694eb",
+                "reference": "6a7e26b56d31a3bf755f5015c007dca2607694eb",
                 "shasum": ""
             },
             "require": {
                 "api-platform/doctrine-common": "^3.4 || ^4.0",
                 "api-platform/metadata": "^3.4 || ^4.0",
                 "api-platform/state": "^3.4 || ^4.0",
+                "doctrine/doctrine-bundle": "^2.11",
                 "doctrine/orm": "^2.17 || ^3.0",
-                "php": ">=8.1",
+                "php": ">=8.2",
                 "symfony/property-info": "^6.4 || ^7.1"
             },
             "require-dev": {
-                "api-platform/parameter-validator": "^3.2",
-                "doctrine/doctrine-bundle": "^2.11",
-                "phpspec/prophecy-phpunit": "^2.0",
-                "phpunit/phpunit": "^10.0",
-                "ramsey/uuid": "^4.7",
+                "phpspec/prophecy-phpunit": "^2.2",
+                "phpunit/phpunit": "^11.2",
+                "ramsey/uuid": "^4.0",
                 "ramsey/uuid-doctrine": "^2.0",
-                "symfony/cache": "^6.4 || ^7.0",
-                "symfony/framework-bundle": "^6.4 || ^7.0",
-                "symfony/phpunit-bridge": "^6.4 || ^7.0",
+                "symfony/cache": "^6.4 || ^7.1",
+                "symfony/framework-bundle": "^6.4 || ^7.1",
                 "symfony/property-access": "^6.4 || ^7.0",
                 "symfony/serializer": "^6.4 || ^7.0",
-                "symfony/uid": "^6.4 || ^7.0",
-                "symfony/validator": "^6.4 || ^7.0",
-                "symfony/yaml": "^6.4 || ^7.0"
+                "symfony/uid": "^6.4 || ^7.1",
+                "symfony/validator": "^6.4 || ^7.1",
+                "symfony/yaml": "^6.4 || ^7.1"
             },
             "type": "library",
             "extra": {
-                "thanks": {
-                    "url": "https://github.com/api-platform/api-platform",
-                    "name": "api-platform/api-platform"
-                },
                 "symfony": {
                     "require": "^6.4 || ^7.1"
                 },
@@ -170,33 +363,34 @@
             "description": "Doctrine ORM bridge",
             "homepage": "https://api-platform.com",
             "keywords": [
-                "api",
                 "doctrine",
-                "graphql",
-                "orm",
-                "rest"
+                "orm"
             ],
             "support": {
-                "source": "https://github.com/api-platform/doctrine-orm/tree/v3.4.10"
+                "source": "https://github.com/api-platform/doctrine-orm/tree/v4.0.0"
             },
-            "time": "2024-12-09T10:30:13+00:00"
+            "time": "2024-09-27T12:40:48+00:00"
         },
         {
             "name": "api-platform/documentation",
-            "version": "v3.4.10",
+            "version": "v4.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/api-platform/documentation.git",
-                "reference": "056f61476ec408aef16c9aca514e2b9514fa8f1e"
+                "reference": "e0fef856ccf0af34d7bcc8f789c521f9ace3fcf7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/api-platform/documentation/zipball/056f61476ec408aef16c9aca514e2b9514fa8f1e",
-                "reference": "056f61476ec408aef16c9aca514e2b9514fa8f1e",
+                "url": "https://api.github.com/repos/api-platform/documentation/zipball/e0fef856ccf0af34d7bcc8f789c521f9ace3fcf7",
+                "reference": "e0fef856ccf0af34d7bcc8f789c521f9ace3fcf7",
                 "shasum": ""
             },
             "require": {
-                "api-platform/metadata": "^3.4 || ^4.0"
+                "api-platform/metadata": "^3.4 || ^4.0",
+                "php": ">=8.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^11.2"
             },
             "type": "project",
             "extra": {
@@ -205,7 +399,7 @@
                     "name": "api-platform/api-platform"
                 },
                 "symfony": {
-                    "require": "^6.4 || ^7.1"
+                    "require": "^6.4 || ^7.0"
                 },
                 "branch-alias": {
                     "dev-3.4": "3.4.x-dev",
@@ -234,37 +428,36 @@
             ],
             "description": "API Platform documentation controller.",
             "support": {
-                "source": "https://github.com/api-platform/documentation/tree/v3.4.10"
+                "source": "https://github.com/api-platform/documentation/tree/v4.0.13"
             },
-            "time": "2024-09-21T10:54:56+00:00"
+            "time": "2024-09-21T11:01:16+00:00"
         },
         {
             "name": "api-platform/http-cache",
-            "version": "v3.4.10",
+            "version": "v4.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/api-platform/http-cache.git",
-                "reference": "66abd8e964f4d5ce1f91802d0ec2b1938abd0fab"
+                "reference": "b21433319d93e90ae7b1df098cd604dc8555b632"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/api-platform/http-cache/zipball/66abd8e964f4d5ce1f91802d0ec2b1938abd0fab",
-                "reference": "66abd8e964f4d5ce1f91802d0ec2b1938abd0fab",
+                "url": "https://api.github.com/repos/api-platform/http-cache/zipball/b21433319d93e90ae7b1df098cd604dc8555b632",
+                "reference": "b21433319d93e90ae7b1df098cd604dc8555b632",
                 "shasum": ""
             },
             "require": {
                 "api-platform/metadata": "^3.4 || ^4.0",
                 "api-platform/state": "^3.4 || ^4.0",
-                "php": ">=8.1",
-                "symfony/http-foundation": "^6.4 || ^7.1"
+                "php": ">=8.2",
+                "symfony/http-foundation": "^6.4 || ^7.0"
             },
             "require-dev": {
                 "guzzlehttp/guzzle": "^6.0 || ^7.0",
-                "phpspec/prophecy-phpunit": "^2.0",
-                "sebastian/comparator": "<5.0",
+                "phpspec/prophecy-phpunit": "^2.2",
+                "phpunit/phpunit": "^11.2",
                 "symfony/dependency-injection": "^6.4 || ^7.0",
-                "symfony/http-client": "^6.4 || ^7.0",
-                "symfony/phpunit-bridge": "^6.4 || ^7.0"
+                "symfony/http-client": "^6.4 || ^7.0"
             },
             "type": "library",
             "extra": {
@@ -273,7 +466,7 @@
                     "name": "api-platform/api-platform"
                 },
                 "symfony": {
-                    "require": "^6.4 || ^7.1"
+                    "require": "^6.4 || ^7.0"
                 },
                 "branch-alias": {
                     "dev-3.4": "3.4.x-dev",
@@ -312,22 +505,22 @@
                 "rest"
             ],
             "support": {
-                "source": "https://github.com/api-platform/http-cache/tree/v3.4.10"
+                "source": "https://github.com/api-platform/http-cache/tree/v4.0.13"
             },
-            "time": "2024-10-26T07:09:46+00:00"
+            "time": "2024-10-28T09:21:17+00:00"
         },
         {
             "name": "api-platform/hydra",
-            "version": "v3.4.10",
+            "version": "v4.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/api-platform/hydra.git",
-                "reference": "db4a2c416ebd749864bd116c87b9db566adb3894"
+                "reference": "cc9501891225d8cdfc00d7c877a50e70e858c6cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/api-platform/hydra/zipball/db4a2c416ebd749864bd116c87b9db566adb3894",
-                "reference": "db4a2c416ebd749864bd116c87b9db566adb3894",
+                "url": "https://api.github.com/repos/api-platform/hydra/zipball/cc9501891225d8cdfc00d7c877a50e70e858c6cf",
+                "reference": "cc9501891225d8cdfc00d7c877a50e70e858c6cf",
                 "shasum": ""
             },
             "require": {
@@ -337,12 +530,16 @@
                 "api-platform/metadata": "^3.4 || ^4.0",
                 "api-platform/serializer": "^3.4 || ^4.0",
                 "api-platform/state": "^3.4 || ^4.0",
-                "php": ">=8.1"
+                "php": ">=8.2",
+                "symfony/web-link": "^6.4 || ^7.0"
             },
             "require-dev": {
                 "api-platform/doctrine-common": "^3.4 || ^4.0",
                 "api-platform/doctrine-odm": "^3.4 || ^4.0",
-                "api-platform/doctrine-orm": "^3.4 || ^4.0"
+                "api-platform/doctrine-orm": "^3.4 || ^4.0",
+                "phpspec/prophecy": "^1.19",
+                "phpspec/prophecy-phpunit": "^2.2",
+                "phpunit/phpunit": "^11.2"
             },
             "type": "library",
             "extra": {
@@ -351,7 +548,7 @@
                     "name": "api-platform/api-platform"
                 },
                 "symfony": {
-                    "require": "^6.4 || ^7.1"
+                    "require": "^6.4 || ^7.0"
                 },
                 "branch-alias": {
                     "dev-3.4": "3.4.x-dev",
@@ -392,36 +589,35 @@
                 "rest"
             ],
             "support": {
-                "source": "https://github.com/api-platform/hydra/tree/v3.4.10"
+                "source": "https://github.com/api-platform/hydra/tree/v4.0.13"
             },
-            "time": "2024-10-25T09:44:09+00:00"
+            "time": "2024-11-06T10:50:57+00:00"
         },
         {
             "name": "api-platform/json-schema",
-            "version": "v3.4.10",
+            "version": "v4.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/api-platform/json-schema.git",
-                "reference": "b01eb55ac4bb8337674818f97035b39b9b61d66b"
+                "reference": "296f94b4f2143efd68c81bf3bc49e716bdc9a3a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/api-platform/json-schema/zipball/b01eb55ac4bb8337674818f97035b39b9b61d66b",
-                "reference": "b01eb55ac4bb8337674818f97035b39b9b61d66b",
+                "url": "https://api.github.com/repos/api-platform/json-schema/zipball/296f94b4f2143efd68c81bf3bc49e716bdc9a3a2",
+                "reference": "296f94b4f2143efd68c81bf3bc49e716bdc9a3a2",
                 "shasum": ""
             },
             "require": {
                 "api-platform/metadata": "^3.4 || ^4.0",
-                "php": ">=8.1",
+                "php": ">=8.2",
                 "symfony/console": "^6.4 || ^7.0",
-                "symfony/property-info": "^6.4 || ^7.1",
-                "symfony/serializer": "^6.4 || ^7.1",
+                "symfony/property-info": "^6.4 || ^7.0",
+                "symfony/serializer": "^6.4 || ^7.0",
                 "symfony/uid": "^6.4 || ^7.0"
             },
             "require-dev": {
-                "phpspec/prophecy-phpunit": "^2.0",
-                "sebastian/comparator": "<5.0",
-                "symfony/phpunit-bridge": "^6.4 || ^7.0"
+                "phpspec/prophecy-phpunit": "^2.2",
+                "phpunit/phpunit": "^11.2"
             },
             "type": "library",
             "extra": {
@@ -430,7 +626,7 @@
                     "name": "api-platform/api-platform"
                 },
                 "symfony": {
-                    "require": "^6.4 || ^7.1"
+                    "require": "^6.4 || ^7.0"
                 },
                 "branch-alias": {
                     "dev-3.4": "3.4.x-dev",
@@ -471,29 +667,32 @@
                 "swagger"
             ],
             "support": {
-                "source": "https://github.com/api-platform/json-schema/tree/v3.4.10"
+                "source": "https://github.com/api-platform/json-schema/tree/v4.0.13"
             },
-            "time": "2024-12-07T11:04:27+00:00"
+            "time": "2024-12-13T13:34:25+00:00"
         },
         {
             "name": "api-platform/jsonld",
-            "version": "v3.4.10",
+            "version": "v4.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/api-platform/jsonld.git",
-                "reference": "aab1d012fb19e00ced5f5deac5928b5fa5aadc23"
+                "reference": "f4123465689e3f853ea6ce9ca70265a78aa5603e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/api-platform/jsonld/zipball/aab1d012fb19e00ced5f5deac5928b5fa5aadc23",
-                "reference": "aab1d012fb19e00ced5f5deac5928b5fa5aadc23",
+                "url": "https://api.github.com/repos/api-platform/jsonld/zipball/f4123465689e3f853ea6ce9ca70265a78aa5603e",
+                "reference": "f4123465689e3f853ea6ce9ca70265a78aa5603e",
                 "shasum": ""
             },
             "require": {
                 "api-platform/metadata": "^3.4 || ^4.0",
                 "api-platform/serializer": "^3.4 || ^4.0",
                 "api-platform/state": "^3.4 || ^4.0",
-                "php": ">=8.1"
+                "php": ">=8.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^11.2"
             },
             "type": "library",
             "extra": {
@@ -502,7 +701,7 @@
                     "name": "api-platform/api-platform"
                 },
                 "symfony": {
-                    "require": "^6.4 || ^7.1"
+                    "require": "^6.4 || ^7.0"
                 },
                 "branch-alias": {
                     "dev-3.4": "3.4.x-dev",
@@ -510,6 +709,9 @@
                 }
             },
             "autoload": {
+                "files": [
+                    "./HydraContext.php"
+                ],
                 "psr-4": {
                     "ApiPlatform\\JsonLd\\": ""
                 },
@@ -542,41 +744,41 @@
                 "rest"
             ],
             "support": {
-                "source": "https://github.com/api-platform/jsonld/tree/v3.4.10"
+                "source": "https://github.com/api-platform/jsonld/tree/v4.0.13"
             },
-            "time": "2024-11-29T14:41:22+00:00"
+            "time": "2024-12-19T16:01:35+00:00"
         },
         {
             "name": "api-platform/metadata",
-            "version": "v3.4.10",
+            "version": "v4.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/api-platform/metadata.git",
-                "reference": "3ddc8c4aeb2ac8e1fd5df4f922eb8264063841c6"
+                "reference": "263b024055028e613d239d6306d00914ce8a942e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/api-platform/metadata/zipball/3ddc8c4aeb2ac8e1fd5df4f922eb8264063841c6",
-                "reference": "3ddc8c4aeb2ac8e1fd5df4f922eb8264063841c6",
+                "url": "https://api.github.com/repos/api-platform/metadata/zipball/263b024055028e613d239d6306d00914ce8a942e",
+                "reference": "263b024055028e613d239d6306d00914ce8a942e",
                 "shasum": ""
             },
             "require": {
                 "doctrine/inflector": "^1.0 || ^2.0",
-                "php": ">=8.1",
+                "php": ">=8.2",
                 "psr/cache": "^1.0 || ^2.0 || ^3.0",
                 "psr/log": "^1.0 || ^2.0 || ^3.0",
-                "symfony/property-info": "^6.4 || ^7.1",
-                "symfony/string": "^6.4 || ^7.0"
+                "symfony/property-info": "^6.4 || ^7.0",
+                "symfony/string": "^6.4 || ^7.0",
+                "symfony/type-info": "^7.1"
             },
             "require-dev": {
                 "api-platform/json-schema": "^3.4 || ^4.0",
                 "api-platform/openapi": "^3.4 || ^4.0",
                 "api-platform/state": "^3.4 || ^4.0",
-                "phpspec/prophecy-phpunit": "^2.0",
-                "phpstan/phpdoc-parser": "^1.16",
-                "sebastian/comparator": "<5.0",
+                "phpspec/prophecy-phpunit": "^2.2",
+                "phpstan/phpdoc-parser": "^1.13",
+                "phpunit/phpunit": "^11.2",
                 "symfony/config": "^6.4 || ^7.0",
-                "symfony/phpunit-bridge": "^6.4 || ^7.0",
                 "symfony/routing": "^6.4 || ^7.0",
                 "symfony/var-dumper": "^6.4 || ^7.0",
                 "symfony/web-link": "^6.4 || ^7.0",
@@ -594,7 +796,7 @@
                     "name": "api-platform/api-platform"
                 },
                 "symfony": {
-                    "require": "^6.4 || ^7.1"
+                    "require": "^6.4 || ^7.0"
                 },
                 "branch-alias": {
                     "dev-3.4": "3.4.x-dev",
@@ -638,39 +840,39 @@
                 "swagger"
             ],
             "support": {
-                "source": "https://github.com/api-platform/metadata/tree/v3.4.10"
+                "source": "https://github.com/api-platform/metadata/tree/v4.0.13"
             },
-            "time": "2024-12-13T13:06:17+00:00"
+            "time": "2024-12-20T09:36:56+00:00"
         },
         {
             "name": "api-platform/openapi",
-            "version": "v3.4.10",
+            "version": "v4.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/api-platform/openapi.git",
-                "reference": "2c06d113ef84eada28fe64a069edf98588a32d3f"
+                "reference": "04324316158c271149e0dd4d9b1f9c0fed8c031e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/api-platform/openapi/zipball/2c06d113ef84eada28fe64a069edf98588a32d3f",
-                "reference": "2c06d113ef84eada28fe64a069edf98588a32d3f",
+                "url": "https://api.github.com/repos/api-platform/openapi/zipball/04324316158c271149e0dd4d9b1f9c0fed8c031e",
+                "reference": "04324316158c271149e0dd4d9b1f9c0fed8c031e",
                 "shasum": ""
             },
             "require": {
                 "api-platform/json-schema": "^3.4 || ^4.0",
                 "api-platform/metadata": "^3.4 || ^4.0",
                 "api-platform/state": "^3.4 || ^4.0",
-                "php": ">=8.1",
+                "php": ">=8.2",
                 "symfony/console": "^6.4 || ^7.0",
-                "symfony/property-access": "^6.4 || ^7.1",
-                "symfony/serializer": "^6.4 || ^7.1"
+                "symfony/property-access": "^6.4 || ^7.0",
+                "symfony/serializer": "^6.4 || ^7.0"
             },
             "require-dev": {
                 "api-platform/doctrine-common": "^3.4 || ^4.0",
                 "api-platform/doctrine-odm": "^3.4 || ^4.0",
                 "api-platform/doctrine-orm": "^3.4 || ^4.0",
-                "phpspec/prophecy-phpunit": "^2.0",
-                "symfony/phpunit-bridge": "^6.4 || ^7.0"
+                "phpspec/prophecy-phpunit": "^2.2",
+                "phpunit/phpunit": "^11.2"
             },
             "type": "library",
             "extra": {
@@ -679,7 +881,7 @@
                     "name": "api-platform/api-platform"
                 },
                 "symfony": {
-                    "require": "^6.4 || ^7.1"
+                    "require": "^6.4 || ^7.0"
                 },
                 "branch-alias": {
                     "dev-3.4": "3.4.x-dev",
@@ -723,39 +925,43 @@
                 "swagger"
             ],
             "support": {
-                "source": "https://github.com/api-platform/openapi/tree/v3.4.10"
+                "source": "https://github.com/api-platform/openapi/tree/v4.0.13"
             },
-            "time": "2024-11-27T16:15:37+00:00"
+            "time": "2024-12-13T11:23:29+00:00"
         },
         {
             "name": "api-platform/serializer",
-            "version": "v3.4.10",
+            "version": "v4.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/api-platform/serializer.git",
-                "reference": "acc3d2b59ac79e6f3284b01c03c7573efc61ddf1"
+                "reference": "ceebfcf062e9da65e0a0626d10644f844a4d67f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/api-platform/serializer/zipball/acc3d2b59ac79e6f3284b01c03c7573efc61ddf1",
-                "reference": "acc3d2b59ac79e6f3284b01c03c7573efc61ddf1",
+                "url": "https://api.github.com/repos/api-platform/serializer/zipball/ceebfcf062e9da65e0a0626d10644f844a4d67f0",
+                "reference": "ceebfcf062e9da65e0a0626d10644f844a4d67f0",
                 "shasum": ""
             },
             "require": {
                 "api-platform/metadata": "^3.4 || ^4.0",
                 "api-platform/state": "^3.4 || ^4.0",
-                "php": ">=8.1",
-                "symfony/property-access": "^6.4 || ^7.1",
-                "symfony/property-info": "^6.4 || ^7.1",
-                "symfony/serializer": "^6.4 || ^7.1",
+                "php": ">=8.2",
+                "symfony/property-access": "^6.4 || ^7.0",
+                "symfony/property-info": "^6.4 || ^7.0",
+                "symfony/serializer": "^6.4 || ^7.0",
                 "symfony/validator": "^6.4 || ^7.0"
             },
             "require-dev": {
+                "api-platform/doctrine-common": "^3.4 || ^4.0",
+                "api-platform/doctrine-odm": "^3.4 || ^4.0",
+                "api-platform/doctrine-orm": "^3.4 || ^4.0",
+                "api-platform/json-schema": "^3.4 || ^4.0",
+                "api-platform/openapi": "^3.4 || ^4.0",
                 "doctrine/collections": "^2.1",
-                "phpspec/prophecy-phpunit": "^2.0",
-                "sebastian/comparator": "<5.0",
+                "phpspec/prophecy-phpunit": "^2.2",
+                "phpunit/phpunit": "^11.2",
                 "symfony/mercure-bundle": "*",
-                "symfony/phpunit-bridge": "^6.4 || ^7.0",
                 "symfony/var-dumper": "^6.4 || ^7.0",
                 "symfony/yaml": "^6.4 || ^7.0"
             },
@@ -770,7 +976,7 @@
                     "name": "api-platform/api-platform"
                 },
                 "symfony": {
-                    "require": "^6.4 || ^7.1"
+                    "require": "^6.4 || ^7.0"
                 },
                 "branch-alias": {
                     "dev-3.4": "3.4.x-dev",
@@ -809,34 +1015,34 @@
                 "serializer"
             ],
             "support": {
-                "source": "https://github.com/api-platform/serializer/tree/v3.4.10"
+                "source": "https://github.com/api-platform/serializer/tree/v4.0.13"
             },
-            "time": "2024-11-27T16:23:42+00:00"
+            "time": "2024-12-01T10:27:17+00:00"
         },
         {
             "name": "api-platform/state",
-            "version": "v3.4.10",
+            "version": "v4.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/api-platform/state.git",
-                "reference": "b4a3e6f5e6e4bf1c9301b05cc2a08ddf5a6de94a"
+                "reference": "531e6e9943fa1730e28227936b1758997fc0309e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/api-platform/state/zipball/b4a3e6f5e6e4bf1c9301b05cc2a08ddf5a6de94a",
-                "reference": "b4a3e6f5e6e4bf1c9301b05cc2a08ddf5a6de94a",
+                "url": "https://api.github.com/repos/api-platform/state/zipball/531e6e9943fa1730e28227936b1758997fc0309e",
+                "reference": "531e6e9943fa1730e28227936b1758997fc0309e",
                 "shasum": ""
             },
             "require": {
                 "api-platform/metadata": "^3.4 || ^4.0",
-                "php": ">=8.1",
+                "php": ">=8.2",
                 "psr/container": "^1.0 || ^2.0",
                 "symfony/http-kernel": "^6.4 || ^7.0"
             },
             "require-dev": {
                 "api-platform/serializer": "^3.4 || ^4.0",
                 "api-platform/validator": "^3.4 || ^4.0",
-                "phpunit/phpunit": "^10.3",
+                "phpunit/phpunit": "^11.2",
                 "symfony/http-foundation": "^6.4 || ^7.0",
                 "symfony/web-link": "^6.4 || ^7.0",
                 "willdurand/negotiation": "^3.1"
@@ -855,7 +1061,7 @@
                     "name": "api-platform/api-platform"
                 },
                 "symfony": {
-                    "require": "^6.4 || ^7.1"
+                    "require": "^6.4 || ^7.0"
                 },
                 "branch-alias": {
                     "dev-3.4": "3.4.x-dev",
@@ -899,22 +1105,22 @@
                 "swagger"
             ],
             "support": {
-                "source": "https://github.com/api-platform/state/tree/v3.4.10"
+                "source": "https://github.com/api-platform/state/tree/v4.0.13"
             },
-            "time": "2024-12-06T10:05:08+00:00"
+            "time": "2024-12-06T10:06:25+00:00"
         },
         {
             "name": "api-platform/symfony",
-            "version": "v3.4.10",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/api-platform/symfony.git",
-                "reference": "2e2707a0add6010a1e063aa02934b3cd876592de"
+                "reference": "5562d741a537a301c097072231abeb904b1909c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/api-platform/symfony/zipball/2e2707a0add6010a1e063aa02934b3cd876592de",
-                "reference": "2e2707a0add6010a1e063aa02934b3cd876592de",
+                "url": "https://api.github.com/repos/api-platform/symfony/zipball/5562d741a537a301c097072231abeb904b1909c9",
+                "reference": "5562d741a537a301c097072231abeb904b1909c9",
                 "shasum": ""
             },
             "require": {
@@ -928,7 +1134,7 @@
                 "api-platform/serializer": "^3.4 || ^4.0",
                 "api-platform/state": "^3.4 || ^4.0",
                 "api-platform/validator": "^3.4 || ^4.0",
-                "php": ">=8.1",
+                "php": ">=8.2",
                 "symfony/property-access": "^6.4 || ^7.1",
                 "symfony/property-info": "^6.4 || ^7.1",
                 "symfony/security-core": "^6.4 || ^7.0",
@@ -942,13 +1148,12 @@
                 "api-platform/elasticsearch": "^3.4 || ^4.0",
                 "api-platform/graphql": "^3.4 || ^4.0",
                 "api-platform/parameter-validator": "^3.1",
-                "phpspec/prophecy-phpunit": "^2.0",
-                "sebastian/comparator": "<5.0",
+                "phpspec/prophecy-phpunit": "^2.2",
+                "phpunit/phpunit": "^11.2",
                 "symfony/expression-language": "^6.4 || ^7.1",
                 "symfony/mercure-bundle": "*",
-                "symfony/phpunit-bridge": "^6.4 || ^7.0",
-                "symfony/routing": "^6.4 || ^7.0",
-                "symfony/validator": "^6.4 || ^7.0",
+                "symfony/routing": "^6.4 || ^7.1",
+                "symfony/validator": "^6.4 || ^7.1",
                 "webonyx/graphql-php": "^14.0 || ^15.0"
             },
             "suggest": {
@@ -956,10 +1161,10 @@
                 "api-platform/doctrine-orm": "To support Doctrine ORM.",
                 "api-platform/elasticsearch": "To support Elasticsearch.",
                 "api-platform/graphql": "To support GraphQL.",
-                "api-platform/ramsey-uuid": "To support Ramsey's UUID identifiers.",
                 "ocramius/package-versions": "To display the API Platform's version in the debug bar.",
                 "phpstan/phpdoc-parser": "To support extracting metadata from PHPDoc.",
                 "psr/cache-implementation": "To use metadata caching.",
+                "ramsey/uuid": "To support Ramsey's UUID identifiers.",
                 "symfony/cache": "To have metadata caching when using Symfony integration.",
                 "symfony/config": "To load XML configuration files.",
                 "symfony/expression-language": "To use authorization and mercure advanced features.",
@@ -971,12 +1176,8 @@
                 "symfony/uid": "To support Symfony UUID/ULID identifiers.",
                 "symfony/web-profiler-bundle": "To use the data collector."
             },
-            "type": "symfony-bundle",
+            "type": "library",
             "extra": {
-                "thanks": {
-                    "url": "https://github.com/api-platform/api-platform",
-                    "name": "api-platform/api-platform"
-                },
                 "symfony": {
                     "require": "^6.4 || ^7.1"
                 },
@@ -1011,40 +1212,45 @@
             "description": "Symfony API Platform integration",
             "homepage": "https://api-platform.com",
             "keywords": [
+                "Hydra",
+                "JSON-LD",
                 "api",
                 "graphql",
+                "hal",
+                "jsonapi",
+                "openapi",
                 "rest",
+                "swagger",
                 "symfony"
             ],
             "support": {
-                "source": "https://github.com/api-platform/symfony/tree/v3.4.10"
+                "source": "https://github.com/api-platform/symfony/tree/v4.0.0"
             },
-            "time": "2024-12-20T09:36:28+00:00"
+            "time": "2024-09-27T12:40:48+00:00"
         },
         {
             "name": "api-platform/validator",
-            "version": "v3.4.10",
+            "version": "v4.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/api-platform/validator.git",
-                "reference": "d6b50c4a1d3ede7a9bcaa5f7898137118e3c42ec"
+                "reference": "095b76546a16c3826441d93f63458b441fefffcb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/api-platform/validator/zipball/d6b50c4a1d3ede7a9bcaa5f7898137118e3c42ec",
-                "reference": "d6b50c4a1d3ede7a9bcaa5f7898137118e3c42ec",
+                "url": "https://api.github.com/repos/api-platform/validator/zipball/095b76546a16c3826441d93f63458b441fefffcb",
+                "reference": "095b76546a16c3826441d93f63458b441fefffcb",
                 "shasum": ""
             },
             "require": {
                 "api-platform/metadata": "^3.4 || ^4.0",
-                "php": ">=8.1",
-                "symfony/web-link": "^6.4 || ^7.1"
+                "php": ">=8.2",
+                "symfony/web-link": "^6.4 || ^7.0"
             },
             "require-dev": {
-                "phpspec/prophecy-phpunit": "^2.0",
-                "sebastian/comparator": "<5.0",
+                "phpspec/prophecy-phpunit": "^2.2",
+                "phpunit/phpunit": "^11.2",
                 "symfony/http-kernel": "^6.4 || ^7.0",
-                "symfony/phpunit-bridge": "^6.4 || ^7.0",
                 "symfony/serializer": "^6.4 || ^7.0",
                 "symfony/validator": "^6.4 || ^7.0"
             },
@@ -1055,7 +1261,7 @@
                     "name": "api-platform/api-platform"
                 },
                 "symfony": {
-                    "require": "^6.4 || ^7.1"
+                    "require": "^6.4 || ^7.0"
                 },
                 "branch-alias": {
                     "dev-3.4": "3.4.x-dev",
@@ -1091,9 +1297,9 @@
                 "validator"
             ],
             "support": {
-                "source": "https://github.com/api-platform/validator/tree/v3.4.10"
+                "source": "https://github.com/api-platform/validator/tree/v4.0.13"
             },
-            "time": "2024-10-30T09:51:13+00:00"
+            "time": "2024-11-04T14:21:40+00:00"
         },
         {
             "name": "composer/semver",
@@ -2559,34 +2765,34 @@
         },
         {
             "name": "lcobucci/clock",
-            "version": "2.3.0",
+            "version": "3.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lcobucci/clock.git",
-                "reference": "c7aadcd6fd97ed9e199114269c0be3f335e38876"
+                "reference": "db3713a61addfffd615b79bf0bc22f0ccc61b86b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lcobucci/clock/zipball/c7aadcd6fd97ed9e199114269c0be3f335e38876",
-                "reference": "c7aadcd6fd97ed9e199114269c0be3f335e38876",
+                "url": "https://api.github.com/repos/lcobucci/clock/zipball/db3713a61addfffd615b79bf0bc22f0ccc61b86b",
+                "reference": "db3713a61addfffd615b79bf0bc22f0ccc61b86b",
                 "shasum": ""
             },
             "require": {
-                "php": "~8.1.0 || ~8.2.0",
-                "stella-maris/clock": "^0.1.7"
+                "php": "~8.2.0 || ~8.3.0 || ~8.4.0",
+                "psr/clock": "^1.0"
             },
             "provide": {
                 "psr/clock-implementation": "1.0"
             },
             "require-dev": {
-                "infection/infection": "^0.26",
-                "lcobucci/coding-standard": "^9.0",
-                "phpstan/extension-installer": "^1.2",
-                "phpstan/phpstan": "^1.9.4",
-                "phpstan/phpstan-deprecation-rules": "^1.1.1",
-                "phpstan/phpstan-phpunit": "^1.3.2",
-                "phpstan/phpstan-strict-rules": "^1.4.4",
-                "phpunit/phpunit": "^9.5.27"
+                "infection/infection": "^0.29",
+                "lcobucci/coding-standard": "^11.1.0",
+                "phpstan/extension-installer": "^1.3.1",
+                "phpstan/phpstan": "^1.10.25",
+                "phpstan/phpstan-deprecation-rules": "^1.1.3",
+                "phpstan/phpstan-phpunit": "^1.3.13",
+                "phpstan/phpstan-strict-rules": "^1.5.1",
+                "phpunit/phpunit": "^11.3.6"
             },
             "type": "library",
             "autoload": {
@@ -2607,7 +2813,7 @@
             "description": "Yet another clock abstraction",
             "support": {
                 "issues": "https://github.com/lcobucci/clock/issues",
-                "source": "https://github.com/lcobucci/clock/tree/2.3.0"
+                "source": "https://github.com/lcobucci/clock/tree/3.3.1"
             },
             "funding": [
                 {
@@ -2619,47 +2825,44 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2022-12-19T14:38:11+00:00"
+            "time": "2024-09-24T20:45:14+00:00"
         },
         {
             "name": "lcobucci/jwt",
-            "version": "4.0.4",
+            "version": "5.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lcobucci/jwt.git",
-                "reference": "55564265fddf810504110bd68ca311932324b0e9"
+                "reference": "ea1ce71cbf9741e445a5914e2f67cdbb484ff712"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lcobucci/jwt/zipball/55564265fddf810504110bd68ca311932324b0e9",
-                "reference": "55564265fddf810504110bd68ca311932324b0e9",
+                "url": "https://api.github.com/repos/lcobucci/jwt/zipball/ea1ce71cbf9741e445a5914e2f67cdbb484ff712",
+                "reference": "ea1ce71cbf9741e445a5914e2f67cdbb484ff712",
                 "shasum": ""
             },
             "require": {
-                "ext-mbstring": "*",
                 "ext-openssl": "*",
-                "lcobucci/clock": "^2.0",
-                "php": "^7.4 || ^8.0"
+                "ext-sodium": "*",
+                "php": "~8.2.0 || ~8.3.0 || ~8.4.0",
+                "psr/clock": "^1.0"
             },
             "require-dev": {
-                "infection/infection": "^0.20",
-                "lcobucci/coding-standard": "^6.0",
-                "mikey179/vfsstream": "^1.6",
-                "phpbench/phpbench": "^0.17",
-                "phpstan/extension-installer": "^1.0",
-                "phpstan/phpstan": "^0.12",
-                "phpstan/phpstan-deprecation-rules": "^0.12",
-                "phpstan/phpstan-phpunit": "^0.12",
-                "phpstan/phpstan-strict-rules": "^0.12",
-                "phpunit/php-invoker": "^3.1",
-                "phpunit/phpunit": "^9.4"
+                "infection/infection": "^0.29",
+                "lcobucci/clock": "^3.2",
+                "lcobucci/coding-standard": "^11.0",
+                "phpbench/phpbench": "^1.2",
+                "phpstan/extension-installer": "^1.2",
+                "phpstan/phpstan": "^1.10.7",
+                "phpstan/phpstan-deprecation-rules": "^1.1.3",
+                "phpstan/phpstan-phpunit": "^1.3.10",
+                "phpstan/phpstan-strict-rules": "^1.5.0",
+                "phpunit/phpunit": "^11.1"
+            },
+            "suggest": {
+                "lcobucci/clock": ">= 3.2"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "4.0-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Lcobucci\\JWT\\": "src"
@@ -2683,7 +2886,7 @@
             ],
             "support": {
                 "issues": "https://github.com/lcobucci/jwt/issues",
-                "source": "https://github.com/lcobucci/jwt/tree/4.0.4"
+                "source": "https://github.com/lcobucci/jwt/tree/5.4.2"
             },
             "funding": [
                 {
@@ -2695,25 +2898,26 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2021-09-28T19:18:28+00:00"
+            "time": "2024-11-07T12:54:35+00:00"
         },
         {
             "name": "lexik/jwt-authentication-bundle",
-            "version": "v2.16.0",
+            "version": "v2.19.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lexik/LexikJWTAuthenticationBundle.git",
-                "reference": "0a0922a2442c52724c09deb099b263300cc12d54"
+                "reference": "1305d7ec0ee540340d9041bd97659a13a0d1e6ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lexik/LexikJWTAuthenticationBundle/zipball/0a0922a2442c52724c09deb099b263300cc12d54",
-                "reference": "0a0922a2442c52724c09deb099b263300cc12d54",
+                "url": "https://api.github.com/repos/lexik/LexikJWTAuthenticationBundle/zipball/1305d7ec0ee540340d9041bd97659a13a0d1e6ed",
+                "reference": "1305d7ec0ee540340d9041bd97659a13a0d1e6ed",
                 "shasum": ""
             },
             "require": {
                 "ext-openssl": "*",
-                "lcobucci/jwt": "^3.4|^4.0",
+                "lcobucci/clock": "^1.2|^2.0|^3.0",
+                "lcobucci/jwt": "^3.4|^4.1|^5.0",
                 "namshi/jose": "^7.2",
                 "php": ">=7.1",
                 "symfony/config": "^4.4|^5.3|^6.0",
@@ -2724,17 +2928,15 @@
                 "symfony/http-kernel": "^4.4|^5.3|^6.0",
                 "symfony/property-access": "^4.4|^5.3|^6.0",
                 "symfony/security-bundle": "^4.4|^5.3|^6.0",
-                "symfony/security-core": "^4.4|^5.3|^6.0",
-                "symfony/security-http": "^4.4|^5.3|^6.0",
                 "symfony/translation-contracts": "^1.0|^2.0|^3.0"
             },
             "conflict": {
                 "symfony/console": "<4.4"
             },
             "require-dev": {
-                "symfony/browser-kit": "^4.4|^5.3|^6.0",
+                "symfony/browser-kit": "^5.4|^6.0",
                 "symfony/console": "^4.4|^5.3|^6.0",
-                "symfony/dom-crawler": "^4.4|^5.3|^6.0",
+                "symfony/dom-crawler": "^5.4|^6.0",
                 "symfony/filesystem": "^4.4|^5.3|^6.0",
                 "symfony/framework-bundle": "^4.4|^5.3|^6.0",
                 "symfony/phpunit-bridge": "^4.4|^5.3|^6.0",
@@ -2803,7 +3005,7 @@
             ],
             "support": {
                 "issues": "https://github.com/lexik/LexikJWTAuthenticationBundle/issues",
-                "source": "https://github.com/lexik/LexikJWTAuthenticationBundle/tree/v2.16.0"
+                "source": "https://github.com/lexik/LexikJWTAuthenticationBundle/tree/v2.19.0"
             },
             "funding": [
                 {
@@ -2815,7 +3017,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-06-12T16:22:12+00:00"
+            "time": "2023-05-06T15:58:15+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -3576,53 +3778,6 @@
                 "source": "https://github.com/php-fig/log/tree/3.0.2"
             },
             "time": "2024-09-11T13:17:53+00:00"
-        },
-        {
-            "name": "stella-maris/clock",
-            "version": "0.1.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/stella-maris-solutions/clock.git",
-                "reference": "fa23ce16019289a18bb3446fdecd45befcdd94f8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/stella-maris-solutions/clock/zipball/fa23ce16019289a18bb3446fdecd45befcdd94f8",
-                "reference": "fa23ce16019289a18bb3446fdecd45befcdd94f8",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.0|^8.0",
-                "psr/clock": "^1.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "StellaMaris\\Clock\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Andreas Heigl",
-                    "role": "Maintainer"
-                }
-            ],
-            "description": "A pre-release of the proposed PSR-20 Clock-Interface",
-            "homepage": "https://gitlab.com/stella-maris/clock",
-            "keywords": [
-                "clock",
-                "datetime",
-                "point in time",
-                "psr20"
-            ],
-            "support": {
-                "source": "https://github.com/stella-maris-solutions/clock/tree/0.1.7"
-            },
-            "time": "2022-11-25T16:15:06+00:00"
         },
         {
             "name": "symfony/asset",
@@ -8532,6 +8687,81 @@
                 }
             ],
             "time": "2024-09-25T14:18:03+00:00"
+        },
+        {
+            "name": "symfony/type-info",
+            "version": "v7.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/type-info.git",
+                "reference": "4f402070b08ad0b87e9cadbb07b87fb36061e6e4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/type-info/zipball/4f402070b08ad0b87e9cadbb07b87fb36061e6e4",
+                "reference": "4f402070b08ad0b87e9cadbb07b87fb36061e6e4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2",
+                "psr/container": "^1.1|^2.0"
+            },
+            "require-dev": {
+                "phpstan/phpdoc-parser": "^1.0|^2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\TypeInfo\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mathias Arlaud",
+                    "email": "mathias.arlaud@gmail.com"
+                },
+                {
+                    "name": "Baptiste LEDUC",
+                    "email": "baptiste.leduc@gmail.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Extracts PHP types information.",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "PHPStan",
+                "phpdoc",
+                "symfony",
+                "type"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/type-info/tree/v7.2.1"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2024-12-11T07:49:41+00:00"
         },
         {
             "name": "symfony/uid",
