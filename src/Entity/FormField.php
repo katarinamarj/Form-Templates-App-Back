@@ -5,6 +5,9 @@ namespace App\Entity;
 use App\Repository\FormFieldRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+
 
 #[ORM\Entity(repositoryClass: FormFieldRepository::class)]
 class FormField
@@ -15,9 +18,19 @@ class FormField
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: "Label cannot be empty.")]
+    #[Assert\Length(
+        max: 255,
+        maxMessage: "Label cannot exceed 255 characters."
+    )]
     private ?string $label = null;
 
     #[ORM\Column(length: 50)]
+    #[Assert\NotBlank(message: "Type is required.")]
+    #[Assert\Choice(
+        choices: ["text", "checkbox", "dropdown"],
+        message: "Invalid type. Allowed values: text, checkbox, dropdown."
+    )]
     private ?string $type = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
