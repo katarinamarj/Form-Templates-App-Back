@@ -4,6 +4,9 @@ namespace App\Entity;
 
 use App\Repository\FormTemplateRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+
 
 #[ORM\Entity(repositoryClass: FormTemplateRepository::class)]
 class FormTemplate
@@ -14,9 +17,18 @@ class FormTemplate
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: "Name cannot be empty.")]
+    #[Assert\Length(
+        max: 255,
+        maxMessage: "Name cannot exceed 255 characters."
+    )]
     private ?string $name = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\Length(
+        max: 255,
+        maxMessage: "Description cannot exceed 255 characters."
+    )]
     private ?string $description = null;
 
     #[ORM\OneToMany(mappedBy: 'formTemplate', targetEntity: FormField::class, cascade: ['persist', 'remove'])]
