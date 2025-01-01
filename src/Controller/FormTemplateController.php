@@ -17,15 +17,7 @@ use Doctrine\Common\Collections\Collection;
 
 class FormTemplateController extends AbstractController
 {
-    /*
-    #[Route('/form/template', name: 'app_form_template')]
-    public function index(): Response
-    {
-        return $this->render('form_template/index.html.twig', [
-            'controller_name' => 'FormTemplateController',
-        ]);
-    }
-    */
+    
 
     #[Route('/form-templates', name: 'create_form_template', methods: ['POST'])]
     public function create(Request $request, EntityManagerInterface $entityManager, ValidatorInterface $validator): JsonResponse
@@ -39,13 +31,26 @@ class FormTemplateController extends AbstractController
         $errors = $validator->validate($formTemplate);
 
         if (count($errors) > 0) {
-            $errorMessages = [];
-            foreach ($errors as $error) {
-                $errorMessages[] = $error->getMessage();
-            }
-
-            return new JsonResponse(['errors' => $errorMessages], Response::HTTP_BAD_REQUEST);
+            return new JsonResponse(['errors' => (string) $errors], Response::HTTP_BAD_REQUEST);
         }
+
+        if (isset($data['fields']) && is_array($data['fields'])) {
+            foreach ($data['fields'] as $fieldData) {
+                $field = new FormField();
+                $field->setLabel($fieldData['label'] ?? null);
+                $field->setType($fieldData['type'] ?? null);
+                $field->setOptions($fieldData['options'] ?? null);
+                $field->setFormTemplate($formTemplate);
+    
+                $fieldErrors = $validator->validate($field);
+                if (count($fieldErrors) > 0) {
+                    return new JsonResponse(['errors' => (string) $fieldErrors], Response::HTTP_BAD_REQUEST);
+                }
+    
+                $entityManager->persist($field);
+            }
+        }
+        
 
         $entityManager->persist($formTemplate);
         $entityManager->flush();
@@ -59,12 +64,21 @@ class FormTemplateController extends AbstractController
     {
         $formTemplates = $entityManager->getRepository(FormTemplate::class)->findAll();
 
-        $response = array_map(fn($template) => [
-            'id' => $template->getId(),
-            'name' => $template->getName(),
-            'description' => $template->getDescription(),
-        ], $formTemplates);
-
+        $response = array_map(function ($template) {
+            return [
+                'id' => $template->getId(),
+                'name' => $template->getName(),
+                'description' => $template->getDescription(),
+                'fields' => array_map(function ($field) {
+                    return [
+                        'id' => $field->getId(),
+                        'label' => $field->getLabel(),
+                        'type' => $field->getType(),
+                        'options' => $field->getOptions()
+                    ];
+                }, $template->getFields()->toArray())
+            ];
+        }, $formTemplates);
         return new JsonResponse($response, Response::HTTP_OK);
     }
 
@@ -77,11 +91,21 @@ class FormTemplateController extends AbstractController
             return new JsonResponse(['error' => 'FormTemplate not found'], Response::HTTP_NOT_FOUND);
         }
 
-        return new JsonResponse([
+        $response = [
             'id' => $formTemplate->getId(),
             'name' => $formTemplate->getName(),
             'description' => $formTemplate->getDescription(),
-        ], Response::HTTP_OK);
+            'fields' => array_map(function ($field) {
+                return [
+                    'id' => $field->getId(),
+                    'label' => $field->getLabel(),
+                    'type' => $field->getType(),
+                    'options' => $field->getOptions()
+                ];
+            }, $formTemplate->getFields()->toArray())
+        ];
+    
+        return new JsonResponse($response, Response::HTTP_OK);
     }
 
     #[Route('/form-templates/{id}', name: 'update_form_template', methods: ['PUT'])]
@@ -103,6 +127,28 @@ class FormTemplateController extends AbstractController
             $formTemplate->setDescription($data['description']);
         }
 
+
+        if (isset($data['fields']) && is_array($data['fields'])) {
+            foreach ($data['fields'] as $fieldData) {
+                if (isset($fieldData['id'])) {
+                    $field = $entityManager->getRepository(FormField::class)->find($fieldData['id']);
+                    if ($field && $field->getFormTemplate() === $formTemplate) {
+                        $field->setLabel($fieldData['label'] ?? $field->getLabel());
+                        $field->setType($fieldData['type'] ?? $field->getType());
+                        $field->setOptions($fieldData['options'] ?? $field->getOptions());
+                    }
+                } else {
+                    $newField = new FormField();
+                    $newField->setLabel($fieldData['label']);
+                    $newField->setType($fieldData['type']);
+                    $newField->setOptions($fieldData['options'] ?? null);
+                    $newField->setFormTemplate($formTemplate);
+                    $entityManager->persist($newField);
+                }
+            }
+        }
+
+
         $entityManager->flush();
 
         return new JsonResponse(['message' => 'FormTemplate updated successfully'], Response::HTTP_OK);
@@ -116,6 +162,10 @@ class FormTemplateController extends AbstractController
 
         if (!$formTemplate) {
             return new JsonResponse(['error' => 'FormTemplate not found'], Response::HTTP_NOT_FOUND);
+        }
+
+        foreach ($formTemplate->getFields() as $field) {
+            $entityManager->remove($field);
         }
 
         $entityManager->remove($formTemplate);
