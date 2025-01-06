@@ -17,8 +17,6 @@ use Doctrine\Common\Collections\Collection;
 
 class FormTemplateController extends AbstractController
 {
-    
-
     #[Route('/form-templates', name: 'create_form_template', methods: ['POST'])]
     public function create(Request $request, EntityManagerInterface $entityManager, ValidatorInterface $validator): JsonResponse
     {
@@ -82,7 +80,7 @@ class FormTemplateController extends AbstractController
         return new JsonResponse($response, Response::HTTP_OK);
     }
 
-    #[Route('/form-templates/{id}', name: 'get_form_template', methods: ['GET'])]
+    #[Route('/api/form-templates/{id}', name: 'get_form_template', methods: ['GET'])]
     public function getOne(int $id, EntityManagerInterface $entityManager): JsonResponse
     {
         $formTemplate = $entityManager->getRepository(FormTemplate::class)->find($id);
@@ -254,28 +252,28 @@ class FormTemplateController extends AbstractController
     $entityManager->flush();
 
     return new JsonResponse(['message' => 'Field updated successfully'], Response::HTTP_OK);
-}
-
-#[Route('/form-templates/{templateId}/fields/{fieldId}', name: 'delete_field', methods: ['DELETE'])]
-public function deleteField(int $templateId, int $fieldId, EntityManagerInterface $entityManager): JsonResponse
-{
-    $formTemplate = $entityManager->getRepository(FormTemplate::class)->find($templateId);
-
-    if (!$formTemplate) {
-        return new JsonResponse(['error' => 'FormTemplate not found'], Response::HTTP_NOT_FOUND);
     }
 
-    $formField = $entityManager->getRepository(FormField::class)->find($fieldId);
+    #[Route('/form-templates/{templateId}/fields/{fieldId}', name: 'delete_field', methods: ['DELETE'])]
+    public function deleteField(int $templateId, int $fieldId, EntityManagerInterface $entityManager): JsonResponse
+    {
+        $formTemplate = $entityManager->getRepository(FormTemplate::class)->find($templateId);
 
-    if (!$formField || $formField->getFormTemplate() !== $formTemplate) {
-        return new JsonResponse(['error' => 'Field not found'], Response::HTTP_NOT_FOUND);
+        if (!$formTemplate) {
+           return new JsonResponse(['error' => 'FormTemplate not found'], Response::HTTP_NOT_FOUND);
+        }
+
+        $formField = $entityManager->getRepository(FormField::class)->find($fieldId);
+
+        if (!$formField || $formField->getFormTemplate() !== $formTemplate) {
+            return new JsonResponse(['error' => 'Field not found'], Response::HTTP_NOT_FOUND);
+        }
+
+        $entityManager->remove($formField);
+        $entityManager->flush();
+
+        return new JsonResponse(['message' => 'Field deleted successfully'], Response::HTTP_NO_CONTENT);
     }
-
-    $entityManager->remove($formField);
-    $entityManager->flush();
-
-    return new JsonResponse(['message' => 'Field deleted successfully'], Response::HTTP_NO_CONTENT);
-}
 
    
 }

@@ -34,9 +34,16 @@ class FormTemplate
     #[ORM\OneToMany(mappedBy: 'formTemplate', targetEntity: FormField::class, cascade: ['persist', 'remove'])]
     private Collection $fields;
 
+    /**
+     * @var Collection<int, FormAnswer>
+     */
+    #[ORM\OneToMany(targetEntity: FormAnswer::class, mappedBy: 'formTemplate', orphanRemoval: true)]
+    private Collection $answers;
+
     public function __construct()
     {
         $this->fields = new ArrayCollection();
+        $this->answers = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -95,6 +102,36 @@ class FormTemplate
         if ($this->fields->removeElement($field)) {
             if ($field->getFormTemplate() === $this) {
                 $field->setFormTemplate(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, FormAnswer>
+     */
+    public function getAnswers(): Collection
+    {
+        return $this->answers;
+    }
+
+    public function addAnswer(FormAnswer $answer): static
+    {
+        if (!$this->answers->contains($answer)) {
+            $this->answers->add($answer);
+            $answer->setFormTemplate($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAnswer(FormAnswer $answer): static
+    {
+        if ($this->answers->removeElement($answer)) {
+            // set the owning side to null (unless already changed)
+            if ($answer->getFormTemplate() === $this) {
+                $answer->setFormTemplate(null);
             }
         }
 
