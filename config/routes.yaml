@@ -4,10 +4,3 @@ controllers:
         namespace: App\Controller
     type: attribute
 
-api_login:
-    path: /api/login
-    methods: POST
-
-api_logout:
-    path: /api/logout
-    methods: GET
