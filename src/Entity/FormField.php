@@ -101,4 +101,45 @@ class FormField
 
         return $this;
     }
+
+
+    public function toArray(): array
+    {
+        return [
+           'id' => $this->getId(),
+           'label' => $this->getLabel(),
+           'type' => $this->getType(),
+           'options' => $this->getOptions()
+        ];
+    }
+
+    public static function createFromData(array $data, FormTemplate $formTemplate): self
+    {
+        $field = new self();
+        $field->setLabel($data['label'] ?? '');
+        $field->setType($data['type'] ?? '');
+        $field->setOptions($data['options'] ?? null);
+        $field->setFormTemplate($formTemplate);
+
+        return $field;
+    }
+
+    public function updateFromData(array $data): self
+    {
+        if (isset($data['label'])) {
+           $this->setLabel($data['label']);
+        }
+
+        if (isset($data['type'])) {
+           $this->setType($data['type']);
+        }
+
+        if (isset($data['options'])) {
+           $this->setOptions($data['options']);
+        } 
+
+       return $this;
+    }
+
+
 }

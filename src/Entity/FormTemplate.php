@@ -6,6 +6,8 @@ use App\Repository\FormTemplateRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\ORM\EntityManagerInterface;
+
 
 
 #[ORM\Entity(repositoryClass: FormTemplateRepository::class)]
@@ -138,4 +140,70 @@ class FormTemplate
         return $this;
     }
 
+
+    public static function createFromData(array $data): self
+    {
+        $formTemplate = new self();
+        $formTemplate->setName($data['name'] ?? '');
+        $formTemplate->setDescription($data['description'] ?? null);
+
+        if (isset($data['fields']) && is_array($data['fields'])) {
+            foreach ($data['fields'] as $fieldData) {
+                $field = new FormField();
+                $field->setLabel($fieldData['label'] ?? '');
+                $field->setType($fieldData['type'] ?? '');
+                $field->setOptions($fieldData['options'] ?? null);
+                $formTemplate->addField($field);
+            }
+        }
+
+        return $formTemplate;
+    }
+
+    public function toArray(): array
+    {
+        return [
+            'id' => $this->getId(),
+            'name' => $this->getName(),
+            'description' => $this->getDescription(),
+            'fields' => array_map(function ($field) {
+               return $field->toArray(); 
+            }, $this->getFields()->toArray())
+        ];
+    }
+
+    public function updateFromData(array $data, EntityManagerInterface $entityManager): self
+    {
+        if (!empty($data['name'])) {
+           $this->setName($data['name']);
+        }
+
+        if (isset($data['description'])) {
+           $this->setDescription($data['description']);
+        }
+
+        if (isset($data['fields']) && is_array($data['fields'])) {
+            foreach ($data['fields'] as $fieldData) {
+                if (isset($fieldData['id'])) {
+                  $field = $entityManager->getRepository(FormField::class)->find($fieldData['id']);
+                    if ($field && $field->getFormTemplate() === $this) {
+                        $field->setLabel($fieldData['label'] ?? $field->getLabel());
+                        $field->setType($fieldData['type'] ?? $field->getType());
+                        $field->setOptions($fieldData['options'] ?? $field->getOptions());
+                    }
+                } else {
+                    $newField = new FormField();
+                    $newField->setLabel($fieldData['label'] ?? '');
+                    $newField->setType($fieldData['type'] ?? '');
+                    $newField->setOptions($fieldData['options'] ?? null);
+                    $newField->setFormTemplate($this);
+                    $entityManager->persist($newField);
+                }
+            }
+        }
+
+        return $this;
+    }
+
 }
+
